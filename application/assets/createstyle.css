@@ -1,0 +1,150 @@
+.container
+{
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+}
+.name{
+   width: 100%;
+}
+.firstname{
+    margin: 1%;
+    width: 40%;
+    margin-left: 2%;
+    display: inline-block;
+}
+.fname{
+    width: 60%;
+    margin-left: 3%;
+}
+.lastname{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.lname{
+    width: 60%;
+    margin-left: 4%;
+}
+.email-contact{
+    width: 100%;
+}
+.email{
+    margin: 1%;
+    width: 40%;
+    margin-left: 2%;
+    display: inline-block;
+}
+.mail{
+    width: 60%;
+    margin-left: 5%;
+}
+.contact{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.econtact{
+    width: 60%;
+    margin-left: 3%;
+}
+.date{
+    width: 100%;
+}
+.date_of_birth{
+    margin: 1%;
+    width: 40%;
+    margin-left: 2%;
+    display: inline-block;
+}
+.dateofbirth{
+    margin-left: 3%;
+}
+.joining_date{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.joiningdate{
+    margin-left: 3%;
+}
+.dest-qulif{
+    width: 100%;
+}
+.destination{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.edestination{
+    margin-left: 3%;
+}
+.qualification{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.equalification{
+    width: 60%;
+    margin-left: 3%;
+}
+.current_address{
+    margin-left: 2%;
+}
+.permanent_address{
+    margin-left: 2%;
+}
+.exp_blood_gender{
+    width: 100%;
+}
+.Year_of_experience{
+    margin: 1%;
+    width: 25%;
+    margin-left:2%;
+    display: inline-block;
+}
+.blood_group{
+    margin: 1%;
+    width: 25%;
+    margin-left:2%;
+    display: inline-block;
+}
+.gender{
+    margin: 1%;
+    width: 25%;
+    margin-left:2%;
+    display: inline-block;
+}
+.emg_pic{
+    width: 100%;
+}
+.Emergency_number{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.profile_photo{
+    margin: 1%;
+    width: 40%;
+    margin-left:2%;
+    display: inline-block;
+}
+.option{
+    margin-top: 2%;
+    margin-left: 65%;
+    margin-bottom: 2%;
+}
+.input[type="text"] {
+    width: 20%;
+    border-radius: 4px;
+}
+input[type="date"] {
+    width: 20%;
+    border-radius: 4px;
+}
