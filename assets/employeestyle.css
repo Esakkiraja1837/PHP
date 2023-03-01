@@ -1,0 +1,244 @@
+.container
+{
+    /* background-color: chocolate; */
+}
+.top-container
+{
+    background-color: bisque;
+}
+.profile .image
+{
+    width: 200px;
+    border-radius: 100px;
+}
+.profile
+{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    margin-left: 5%;
+    display: inline-block;
+}
+.profile .images{
+    display: inline-block;
+}
+.profile .details{
+    display: inline-block;
+}
+.profile .name{
+    font-weight: bold;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.profile .desination{
+    margin-top: 2px;
+    font-size: 18px;
+}
+.desination .desination-icon{
+    margin-right: 10px;
+    display: inline-block;
+    color: rgb(11, 11, 11);
+    font-size: 12px;
+}
+.profile .email{
+    margin-top: 2px;
+    font-size: 15px;
+}
+.profile .email .mail-icon{
+    margin-right: 10px;
+    display: inline-block;
+    color: rgb(11, 11, 11);
+    font-size: 12px;
+}
+.profile .mobile{
+    margin-top: 4px;
+    font-size: 15px;
+}
+.profile .mobile .mobile-icon{
+    margin-right: 10px;
+    display: inline-block;
+    color: rgb(11, 11, 11);
+    font-size: 12px;
+}
+.location{
+    margin-top: 5px;
+    font-size: 15px;
+}
+.location-icon{
+    margin-right: 10px;
+    display: inline-block;
+    color: rgb(11, 11, 11);
+    font-size: 12px;
+}
+.about{
+    margin-left: 5%;
+}
+.qulaification{
+    margin-top: 1%;
+    display: inline-block;
+    font-size:18px;
+}
+.quali-val{
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 37px;
+}
+.experience{
+    margin-top: 1%;
+    display: inline-block;
+    font-size:18px;
+}
+.experience-val{
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 50px;
+}
+.personal-data{
+    margin-left: 5%;
+    display: inline-block;
+    margin-bottom: 2%;
+    padding-top: 5%;
+}
+.date-of-birth{
+    margin-top: 1%;
+    display: inline-block;
+    font-size: 18px;
+    
+}
+.datebirth{
+    margin-left: 30px;
+    display: inline-block;
+    font-weight: bold;
+}
+.date-of-joining{
+    margin-top: 1%;
+    font-size: 18px;
+    display: inline-block;
+}
+.datejoining{
+    margin-left: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+.blood{
+    margin-top: 1%;
+    font-size: 18px;
+    display: inline-block;
+}
+.blood-val
+{
+    margin-left: 35px;
+    display: inline-block;
+    font-weight: bold;
+}
+.address{
+    margin-top: 1%;
+    font-size: 18px;
+    display: inline-block;
+}
+.address-val
+{
+    margin-left: 69px;
+    display: inline-block;
+    font-weight: bold;
+}
+.emergency{
+    margin-top: 1%;
+    font-size: 18px;
+    display: inline-block;
+}
+.emergency-val
+{
+    margin-left: 23px;
+    display: inline-block;
+    font-weight: bold;
+}
+.gender{
+    margin-top: 1%;
+    font-size: 18px;
+    display: inline-block;
+}
+.gender-val
+{
+    margin-left: 74px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+.company-details{
+    display: inline-block;
+    margin-left: 50%;
+}
+.company-details .company-name{
+    font-size: 14px;
+    display: inline-block;
+}
+.company-details .name-val{
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+.owner-name{
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+.owner-val{
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+.mail{
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+.mail-val{
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+.contact-no{
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+.contact-val{
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+.company-location{
+    margin-top: 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+.location-val{
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+.social-media
+{
+    margin-top: 10%;
+    
+}
+.facebook
+{
+    font-size: 30px;
+    display: inline-block;
+}
+.twitter{
+    margin-left: 20px;
+    font-size: 30px;
+    display: inline-block;
+}
+.instagram{
+    margin-left: 20px;
+    font-size: 30px;
+    display: inline-block;
+}
+.buttom-container{
+    width: 100%;
+    display: inline-block;
+}

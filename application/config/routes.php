@@ -45,9 +45,15 @@ $route['employee'] = 'Employee/EmployeeController/index';
 $route['employee/name'] = 'Employee/EmployeeController/orderbyName';
 $route['employee/experience'] = 'Employee/EmployeeController/orderbyExperience';
 $route['employee/create'] = 'Employee/EmployeeController/create';
-$route['employee/search'] = 'Employee/EmployeeController/search';
+$route['employee/search'] = 'Employee/EmployeeController/getEmployee';
 $route['update'] = 'Employee/EmployeeController/update';
 $route['delete'] = 'Employee/EmployeeController/delete';
+// $route['employee/delete'] = 'Employee/EmployeeController/delete';
+
+
+$route['employee/technology'] = 'Employee/EmployeeController/showbytechnolgies';
+$route['view'] = 'Employee/EmployeeController/getAllDetails';
+
 
 
 /* End of file routes.php */

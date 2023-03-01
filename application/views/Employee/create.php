@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href='http://localhost/CodeIgniter-2.2.6/assets/createstyle.css' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
     <div class="container">
-<h1>Employee Details</h1>
+<h1>Employee Information Form</h1>
 <hr>
     <form action="EmployeeController/insert" method = "POST">
         <fieldset>
+            <h2>Personal Information</h2>
             <div class = "name">
             <div class="firstname" >
             FirstName 
@@ -37,13 +39,13 @@
             <div class="date_of_birth" >
             <lable for=""start> Date-Of-Birth </lable>
             <input type = "date" class = "dateofbirth" name = "dateofbirth" 
-             min="1940-01-01" max="2023-02-10" value ="<?php echo set_value("dateofbirth");?>">
+             min="1940-01-01" max="2023-10-10" value ="<?php echo set_value("dateofbirth");?>">
             <br><br></div>
 
             <div class="joining_date" >
             <lable for=""start> Date-of-joining  </lable>
             <input type = "date" class = "joiningdate" name = "joiningdate" 
-             min="1940-01-01" max="2023-02-10" value ="<?php echo set_value("joiningdate");?>">
+             min="1940-01-01" max="2023-10-10" value ="<?php echo set_value("joiningdate");?>">
             <br><br></div></div>
 
             <div class = "dest-qulif">
@@ -94,23 +96,23 @@
             <br><br></div></div>
 
             <div class="current_address" >
-            <p><label for="address">Current_address </label></p>
-            <textarea id="caddress" name="currentaddress" rows="2" cols="112" value ="<?php echo set_value("currentaddress");?>"></textarea>
+            <p><label for="address">Current address </label></p>
+            <textarea id="caddress" name="currentaddress" rows="2" cols="102" value ="<?php echo set_value("currentaddress");?>"></textarea>
             <br><br></div>
 
             <div class="permanent_address" >
-            <p><label for="paddress">Permanent_address </label></p>
-            <textarea id="paddress" name="permanentaddress" rows="2" cols="112" value ="<?php echo set_value("permanentaddress");?>"></textarea>
+            <p><label for="paddress">Permanent address </label></p>
+            <textarea id="paddress" name="permanentaddress" rows="2" cols="102" value ="<?php echo set_value("permanentaddress");?>"></textarea>
             <br><br></div>
 
             <div class="exp_blood_gender">
             <div class="Year_of_experience" >
-            <label for = "experience">Year_of_experience :</label>
+            <label for = "experience">Year of experience :</label>
             <input type = "number" id = "experience" min="0" max="50" class = "experience" name = "experience" value ="<?php echo set_value("experience");?>">
             <br><br></div>
 
             <div class="blood_group" >
-            <label for="blood" >Blood_group :</label>
+            <label for="blood" >Blood group :</label>
                 <select name="bloodgroup" id="blood" value ="<?php echo set_value("bloodgroup");?>">
                 <option value="A+ve">A+ve</option>
                 <option value="A+ve">A-ve</option>
@@ -137,6 +139,29 @@
             <lable for="file">Profile photo :</lable>
             <input type = "file" id = "file" class = "profile" name = "profilephoto">
             <br><br></div></div>
+
+            <div class="technology" >
+            <label for="tecnology">Known Languages: </label><br>
+             <select name = "technology[ ]" id = "technology" multiple>
+                <option value="1" <?php echo set_select('technology[]', '1'); ?>>Php</option>
+                <option value="2" <?php echo set_select('technology[]', '2'); ?>>Java</option>
+                <option value="3" <?php echo set_select('technology[]', '3'); ?>>Phython</option>
+                <option value="4" <?php echo set_select('technology[]', '4'); ?>>Html</option>
+                <option value="5" <?php echo set_select('technology[]', '5'); ?>>Css</option>
+                <option value="6" <?php echo set_select('technology[]', '6'); ?>>JavaScript</option>
+                <option value="7" <?php echo set_select('technology[]', '7'); ?>>Angular</option>
+                <option value="8" <?php echo set_select('technology[]', '8'); ?>>React</option>
+                <option value="9" <?php echo set_select('technology[]', '9'); ?>>Go</option>
+                <option value="10" <?php echo set_select('technology[]', '10'); ?>>C#</option>
+                <option value="11" <?php echo set_select('technology[]', '11'); ?>>C & C++</option>
+            </select><br /><br></div>
+    
+    <div class="company">
+    <label for="company">Company: </label>
+    <select class="company" name="companyid" id="companyid">
+        <option value="2" <?php echo set_select('company', '2'); ?>>TCS</option>
+        <option value="3" <?php echo set_select('company', '3'); ?>>Ideas2It</option>
+    </select><br><br></div>
 
             <div class="option">
             <input type = "submit" class = "submit" name = "submit" value = "Submit">

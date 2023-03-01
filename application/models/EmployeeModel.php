@@ -1,82 +1,110 @@
 <?php
 class EmployeeModel extends CI_Model{
 
-    protected  $table = 'employee';
+    // protected  $table = 'employee';
+
     function __construct(){
       parent::__construct();
       $this->load->database();
     }
 
-    public function insertEmployee()
-    {
-        $details = array(
-                          'first_name' => $this->input->post('firstname'),
-                          'last_name' => $this->input->post('lastname'),
-                          'date_of_birth' => $this->input->post('dateofbirth'),
-                          'gender' => $this->input->post('gender'),
-                          'emailid' => $this->input->post('emailid'),
-                          'contact_number' => $this->input->post('contactnumber'),
-                          'date_of_joining' => $this->input->post('joiningdate'),
-                          'designation' => $this->input->post('destination'),
-                          'current_address' => $this->input->post('currentaddress'),
-                          'experience' => $this->input->post('experience'),
-                          'permament_address' => $this->input->post('permanentaddress'),
-                          'blood_group' => $this->input->post('bloodgroup'),
-                          'qualification' => $this->input->post('qualification'),
-                          'emergency_number' => $this->input->post('emergencynumber'),
-                          'picture' => $this->input->post('profilephoto')
-                        );
-        $result = $this->db->insert('employee', $details);
-        return $result;
+    public function recordCount(){
+      $this->db->where('isdelete', TRUE);
+      $this->db->from('employee');
+      $count = $this->db->count_all_results();
+      return $count;
     }
 
-    public function getAllEmployee($order){
+    public function insertEmployee($employee)
+    {
+        $this->db->insert('employee', $employee);
+        $id = $this->db->insert_id();
+        return $id;
+    }
+
+    public function addTechnology($technology, $id){
+      for($index = 0; $index < sizeof($technology); $index++){
+        $employeeTechnology = $technology[$index];
+        $data = array('employee_id'=>$id, 'technology_id'=>$employeeTechnology);
+        $result = $this->db->insert('employee_technology', $data); 
+      }
+      return $result;
+    }
+
+    public function getAllEmployee($order, $limit, $start){
 
         if ($order=='first_name'){
+          $this->db->limit($limit, $start);
           $this->db->from('employee');
           $this->db->order_by('first_name asc');
-          $employeedetails = $this->db->get();  
+          $employeedetails = $this->db->where('isdelete', TRUE)->get();  
         } 
         
         if ($order=='experience'){
+          $this->db->limit($limit, $start);
           $this->db->from('employee');
           $this->db->order_by('experience desc');
-          $employeedetails = $this->db->get();
+          $employeedetails = $this->db->where('isdelete', TRUE)->get();
         }
 
         if($order == ""){
-          $employeedetails = $this->db->get('employee'); 
+          echo "asdfghjk";
+          $this->db->from('employee');
+          $this->db->where('isdelete', TRUE);
+          $this->db->limit($limit, $start);
+          $employeedetails = $this->db->get();
         }
         return $employeedetails->result();
+    }
+
+    public function getAllEmployeeDetails($id){
+      $this->db->select('*');
+      $this->db->from('employee');
+       $this->db->where('id', $id);
+       $query = $this->db->get();
+      return $query->result();
     }
 
     public function searchEmployee($data){
         $this->db->select('*');
         $this->db->from('employee');
-        $this->db->where('first_name', $data);
-        $query = $this->db->get();
+        $this->db->like('first_name', $data);
+        $this->db->or_like('last_name', $data);
+        $this->db->or_like('emailid', $data);
+        // $this->db->where('first_name', $data);
+        $query = $this->db->where('isdelete', TRUE)->get();
         return $query->result();
     }
 
     public function isavailable($id){
-        $query = $this->db->query("select * from employee where id='".$id."'");
-        $query->result();
-        echo "welcome"."$id";
+      $this->db->select('*');
+      $this->db->from('employee');
+      $query = $this->db->where('id', $id)->get();
+        return $query->result();
     }
 
     public function updateEmployee($details,$id){
         $query = $this->db->where('id', $id);
-        $this->db->update('employee',$details);
+        $this->db->update('employee', $details);
         return $query;
     }
 
     public function deleteEmployee($id){
         $query = $this->db->query("update employee SET isdelete = false where id='".$id."'");
         if($query == true){
-            echo "Employee id = ".$id."successfully deleted";
+            echo "Employee id = ".$id."  successfully deleted";
         } else {
             echo "Failed to delete";
         }
+    }
+
+    public function employeebyTechnology($id){
+      $this->db->select('*');
+      $this->db->from('employee');
+      $this->db->join('employee_technology','employee_technology.employee_id = employee.id');
+      $this->db->where("technology_id", $id);
+      $query = $this->db->get();
+      return $query->result();
     }
 }
 ?>
