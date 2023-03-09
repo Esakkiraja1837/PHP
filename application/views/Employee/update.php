@@ -9,50 +9,55 @@ if (!$dbConnect) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href='http://localhost/CodeIgniter-2.2.6/assets/createstyle.css' />
+    <script src="https://kit.fontawesome.com/c05f39e131.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>updatepage</title>
 </head>
     <div class="container">
 <h1>Edit - Employee Details</h1>
 <hr>
     <form action="" method = "POST">
-        <fieldset>
-            <?php foreach($details as $employee) { ?>
+            <?php foreach ($details as $employee) { ?>
+                <div class="back">
+                <div class="link">
+                    <a href="http://localhost/CodeIgniter-2.2.6/index.php/employee"><i class='fas fa-arrow-circle-left'></i></button></a>
+                </div>
+                <div class="title">
+                    <h2>Personal Details</h2>
+                </div>
+            </div>
             <div class = "name">
             <div class="firstname" >
             FirstName 
-            <input type = "text" class = "fname" name = "firstname" value="<?php echo $employee->first_name; ?>">
-            <!-- ?php echo form_error('firstname'); ?> -->
+            <input type = "text" class = "fname" name = "firstname" autocomplete="off"value="<?php echo $employee->first_name; ?>">
             <br><br></div>
 
             <div class="lastname" >
             LastName 
-            <input type = "text" class = "lname" name = "lastname" value="<?php echo $employee->last_name; ?>">
+            <input type = "text" class = "lname" name = "lastname" autocomplete="off" value="<?php echo $employee->last_name; ?>">
             <br><br></div></div>
 
             <div class="email-contact">
             <div class="email">
             <lable for = "email">Email Id </lable>
-            <input type = "email" class = "mail" name = "emailid" value="<?php echo $employee->emailid; ?>">
+            <input type = "email" class = "mail" name = "emailid" autocomplete="off" value="<?php echo $employee->emailid; ?>">
             <br><br></div>
 
             <div class="contact" >
             Contact No 
-            <input type = "text" class = "econtact" name = "contactnumber" value="<?php echo $employee->contact_number; ?>">
+            <input type = "text" class = "econtact" name = "contactnumber" autocomplete="off" value="<?php echo $employee->contact_number; ?>">
             <br><br></div></div>
 
             <div class="date">
             <div class="date_of_birth" >
             <lable for=""start> Date-Of-Birth </lable>
-            <input type = "date" class = "dateofbirth" name = "dateofbirth" value="<?php echo $employee->date_of_birth; ?>"
-             min="1940-01-01" max="2023-02-10" >
+            <input type = "date" class = "dateofbirth" name = "dateofbirth" value="<?php echo $employee->date_of_birth; ?>">
             <br><br></div>
 
             <div class="joining_date" >
             <lable for=""start> Date-of-joining  </lable>
-            <input type = "date" class = "joiningdate" name = "joiningdate" value="<?php echo $employee->date_of_joining; ?>"
-             min="1940-01-01" max="2023-02-10" >
+            <input type = "date" class = "joiningdate" name = "joiningdate" value="<?php echo $employee->date_of_joining; ?>">
             <br><br></div></div>
 
             <div class = "dest-qulif">
@@ -169,17 +174,17 @@ if (!$dbConnect) {
 
             <div class="qualification" >
             Qualification
-            <input type = "text" class = "equalification" name = "qualification" value="<?php echo $employee->qualification; ?>">
+            <input type = "text" class = "equalification" autocomplete="off" name = "qualification" value="<?php echo $employee->qualification; ?>">
             <br><br></div></div>
 
             <div class="current_address" >
             <p><label for="address">Current_address </label></p>
-            <textarea id="caddress" name="currentaddress" rows="2" cols="102" value="<?php echo $employee->current_address; ?>" ></textarea>
+            <textarea id="caddress" name="currentaddress" rows="2" cols="102" value="<?php echo $employee->current_address; ?>"> </textarea>
             <br><br></div>
 
             <div class="permanent_address" >
             <p><label for="paddress">Permanent_address </label></p>
-            <textarea id="paddress" name="permanentaddress" rows="2" cols="102" value="<?php echo $employee->permament_address; ?>"></textarea>
+            <textarea id="paddress" name="permanentaddress" rows="2" cols="102" value="<?php echo $employee->permament_address; ?>"> </textarea>
             <br><br></div>
 
             <div class="exp_blood_gender">
@@ -204,48 +209,51 @@ if (!$dbConnect) {
            
             <div class="gender" >
             gender
-            <input type = "text" class = "gender" name = "gender" value="<?php echo $employee->gender; ?>">
+            <input type = "text" class = "gender" autocomplete="off" name = "gender" value="<?php echo $employee->gender; ?>">
             <br><br></div></div>
 
             <div class ="emg_pic">
             <div class="Emergency_number" >
             Emergency number
-            <input type = "text" class = "emergency" name = "emergencynumber" value="<?php echo $employee->emergency_number; ?>">
+            <input type = "text" class = "emergency" autocomplete="off" name = "emergencynumber" value="<?php echo $employee->emergency_number; ?>">
             <br><br></div>
 
             <div class="profile_photo" >
             <lable for="file">Profile photo :</lable>
-            <input type = "file" id = "file" class = "profile" name = "profilephoto" value="<?php echo $employee->picture; ?>">
+            <input type = "file" id = "file" class = "profile" name = "profilephoto" accept="image/x-png,image/gif,image/jpeg" value="<?php echo $employee->picture; ?>">
             <br><br></div></div>
 
-            <div class="technology" >
-    <label for="tecnology">Known Languages: </label><br>
-    <select name = "technology" id = "technology" value="<?php echo $employee->technology;?>"multiple>
-        <option value="1" ?php echo set_select('technology[]', '1'); ?>>Php</option>
-        <option value="2" ?php echo set_select('technology[]', '2'); ?>>Java</option>
-        <option value="3" ?php echo set_select('technology[]', '3'); ?>>Phython</option>
-        <option value="4" ?php echo set_select('technology[]', '4'); ?>>Html</option>
-        <option value="5" ?php echo set_select('technology[]', '5'); ?>>Css</option>
-        <option value="6" ?php echo set_select('technology[]', '6'); ?>>JavaScript</option>
-        <option value="7" ?php echo set_select('technology[]', '7'); ?>>Angular</option>
-        <option value="8" ?php echo set_select('technology[]', '8'); ?>>React</option>
-        <option value="9" ?php echo set_select('technology[]', '9'); ?>>Go</option>
-        <option value="10"?php echo set_select('technology[]', '10'); ?>>C#</option>
-        <option value="11"?php echo set_select('technology[]', '11'); ?>>C & C++</option>
-    </select><br /><br></div> 
-        <?php } ?>
+            <div class="technology" ><br>
+                <label for="technology">Known Languages: </label>
+                <select name = "technology[]" id = "technology" value="<?php echo $employee->technology;?>"multiple>
+                        <option value="1" <?php echo set_select('technology[]', '1'); ?>>Php</option>
+                        <option value="2" <?php echo set_select('technology[]', '2'); ?>>Java</option>
+                        <option value="3" <?php echo set_select('technology[]', '3'); ?>>Phython</option>
+                        <option value="4" <?php echo set_select('technology[]', '4'); ?>>Html</option>
+                        <option value="5" <?php echo set_select('technology[]', '5'); ?>>Css</option>
+                        <option value="6" <?php echo set_select('technology[]', '6'); ?>>JavaScript</option>
+                        <option value="7" <?php echo set_select('technology[]', '7'); ?>>Angular</option>
+                        <option value="8" <?php echo set_select('technology[]', '8'); ?>>React</option>
+                        <option value="9" <?php echo set_select('technology[]', '9'); ?>>Go</option>
+                        <option value="10"<?php echo set_select('technology[]', '10'); ?>>C#</option>
+                        <option value="11"<?php echo set_select('technology[]', '11'); ?>>C & C++</option>
+                </select><br /><br>
+                </div>
+                <div class="company">
+            <label for="company">Company: </label>
+            <select class="company" name="companyid" id="companyid">
+                <option value="2" <?php echo set_select('company', '2'); ?>>TCS</option>
+                <option value="3" <?php echo set_select('company', '3'); ?>>Ideas2It</option>
+            </select><br><br>
+        </div> 
+        
 
             <div class="option">
             <input type = "submit" class = "submit" name = "submit" value = "Submit">
             <input type = "submit" class = "cancel" name = "back" value = "Back">
-
-        </fieldset></div>
+        </div>
+        <?php } ?>
     </form>
     </div>
 </body>
 </html>
-<?php 
-    if(isset($_POST['back'])){
-        header('location:Employee/view.php');
-}
-?>

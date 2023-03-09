@@ -12,7 +12,7 @@ if (!$dbConnect) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>viewpage</title>
 </head>
     <body>
     <form action="employee/search" method = "GET">
@@ -20,29 +20,30 @@ if (!$dbConnect) {
                         <div class="block">
                             <div class="search-block">
                                 <div class="search">
-                                    <input type="search" class="input" name="firstname">
+                                    <input type="search" class="input" name="firstname" autocomplete="off">
                                     <div class="option">
                                         <input type="submit" class="submit" value="Submit">
                                     </div>
                                 </div>
                             </div>
-                        </div><hr>
-                        
-                    <div class="container">
+                        </div>
+            </div>
+            <div class="container">
+
                         <div class="sort">
                             <button class = "sort-button">Sort</button>
                             <div class="sort-content">
                                 <a href="http://localhost/CodeIgniter-2.2.6/index.php/employee/experience">Experience</button></a>
                                 <a href="http://localhost/CodeIgniter-2.2.6/index.php/employee/name">Name</button></a>
+                                <a href="http://localhost/CodeIgniter-2.2.6/index.php/employee/technology">Technology</button></a>
                             </div>
                         </div>
+
                         <div class="create">
-                            <i class='fas fa-plus'></i>
+                        <i class='far fa-plus-square'></i>
                             <a href="http://localhost/CodeIgniter-2.2.6/index.php/employee/create">Add user</button></a>
                         </div>
-                  </div>
-            </div>
-
+                    </div>
         <fieldset>
             <table>
                 <tr>

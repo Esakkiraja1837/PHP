@@ -2,17 +2,18 @@
 {
     width: 90%;
     height: 90%;
-    /* margin: 5%; */
 }
 h1{
     margin-left: 35%;
 }
+h2{
+    margin-left: 17%;
+}
 .name{
    width: 100%;
-   margin-left: 10%;
+   margin-left: 15%;
 }
 .firstname{
-    margin: 1%;
     width: 40%;
     margin-left: 2%;
     display: inline-block;
@@ -24,7 +25,6 @@ h1{
 .lastname{
     margin: 1%;
     width: 40%;
-    margin-left:2%;
     display: inline-block;
 }
 .lname{
@@ -33,10 +33,9 @@ h1{
 }
 .email-contact{
     width: 100%;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 .email{
-    margin: 1%;
     width: 40%;
     margin-left: 2%;
     display: inline-block;
@@ -46,10 +45,9 @@ h1{
     margin-left: 5%;
 }
 .contact{
-    margin: 1%;
     width: 40%;
-    margin-left:2%;
     display: inline-block;
+    margin-left: 1%;
 }
 .econtact{
     width: 60%;
@@ -57,28 +55,28 @@ h1{
 }
 .date{
     width: 100%;
-    margin-left: 10%;
+    margin-left: 17%;
 }
 .date_of_birth{
-    margin: 1%;
     width: 40%;
-    margin-left: 2%;
     display: inline-block;
+}
+input{
+    border-radius: 8px;
+    border-style: none solid 0px;
 }
 input[type="date"] {
     width: 30%;
     border-radius: 4px;
 }
-
 .dateofbirth{
-    margin-left: 3%;
     width: 18%;
+    margin-left: 3%;
     border-style: 0.5px solid;
 }
 .joining_date{
-    margin: 1%;
     width: 40%;
-    margin-left:2%;
+    margin-left:1%;
     display: inline-block;
 }
 .joiningdate{
@@ -86,67 +84,59 @@ input[type="date"] {
 }
 .dest-qulif{
     width: 100%;
-    margin-left: 10%;
+    margin-left: 17%;
+    display: inline-block;
+}
+.work{
+    display: inline-block;
 }
 .destination{
-    margin: 1%;
-    width: 40%;
-    margin-left:2%;
     display: inline-block;
-}
-.edestination{
-    margin-left: 3%;
 }
 .qualification{
-    margin: 1%;
-    width: 40%;
-    margin-left:2%;
+    width: 45%;
     display: inline-block;
+    margin-left: 12%;
 }
-.equalification{
-    width: 60%;
+.qualification-val{
     margin-left: 3%;
+    width: 50%;
 }
 .current_address{
-    margin-left: 12%;
+    margin-left: 17%;
 }
 .permanent_address{
-    margin-left: 12%;
-
+    margin-left: 17%;
 }
 .exp_blood_gender{
     width: 100%;
-    margin-left: 11%;
+    margin-left: 17%;
 }
 .Year_of_experience{
-    margin: 1%;
     width: 20%;
-    /* margin-left:2%; */
     display: inline-block;
 }
+#experience{
+    display: inline-block;
+    width: 30%;
+}
 .blood_group{
-    margin: 1%;
     width: 20%;
     margin-left:2%;
     display: inline-block;
 }
 .gender{
-    margin: 1%;
-    /* width: 25%; */
     display: inline-block;
 }
 .emg_pic{
     width: 100%;
-    margin-left: 11%;
+    margin-left: 17%;
 }
 .Emergency_number{
-    margin: 1%;
     width: 40%;
-    /* margin-left:2%; */
     display: inline-block;
 }
 .profile_photo{
-    margin: 1%;
     width: 40%;
     margin-left:2%;
     display: inline-block;
@@ -156,20 +146,40 @@ input[type="date"] {
     margin-left: 85%;
     margin-bottom: 2%;
 }
-.technical_skill
-{
-    margin-left:0 ;
+.tech-company{
+width: 80%;
 }
 .technology{
-    padding-left: 12%;
+    margin-left: 22%;
+    display: inline-block;
+}
+.company{
+    display: inline-block;
 }
 fieldset{
-    margin: 8%;
+    width: 100%;
+    height: 80%;
     background-color: rgb(189, 194, 198);
 }
 h2{
     margin-left: 12%;
 }
 .company label{
-    padding-left: 12%;
+    display: inline-block;
+}
+textarea{
+    border-radius: 10px;
+}
+.back{
+    width: 60%;
+}
+.link{
+    display: inline-block;
+    color: black;
+    font-size: 29px;
+}
+.title{
+    margin-left: 18%;
+    display: inline-block;
+    width: 40%;
 }

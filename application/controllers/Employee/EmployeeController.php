@@ -7,7 +7,8 @@ class EmployeeController extends CI_Controller{
         parent::__construct();
         $this->load->model('EmployeeModel');
         $this->load->library('pagination');
-        $this->load->helper('url');
+        // $this->load->helper('url');
+        $this->load->helper(['url', 'form']);
     }
 
     public function employeeDetails(){
@@ -115,10 +116,14 @@ class EmployeeController extends CI_Controller{
         $employee['picture' ]= $this->input->post('profilephoto');
         $technology = $this->input->post('technology');
         $employee['companyid'] = $this->input->post('companyid');
-        echo $employee['companyid'];
         $id = $this->EmployeeModel->insertEmployee($employee);
         $result = $this->EmployeeModel->addTechnology($technology, $id);
-        $this->load->view('Employee/view');
+
+        if($id){
+            echo "<script type = 'text/javascript'>alert('Employee details created successfully');location = 'index';</script>";
+        } else {
+            $this->load->view('Employee/create');
+        }
     }
 
     public function search(){
@@ -128,7 +133,13 @@ class EmployeeController extends CI_Controller{
     public function getEmployee() {
         $data = $this->input->get('firstname');
         $details['details'] = $this->EmployeeModel->searchEmployee($data);
-        $this->load->view('Employee/view', $details);
+        if($details) {
+            $this->load->view('Employee/view', $details);
+        } else {
+            echo "<script type = 'text/javascript'>alert('Employee doesn't exits');location = 'index';</script>";
+            echo "$data";
+        }
+        
     }
 
     public function getAllDetails(){
@@ -147,26 +158,25 @@ class EmployeeController extends CI_Controller{
         $result['details'] = $this->EmployeeModel->isavailable($id);
         $this->load->view('Employee/update', $result);
         if($this->input->post('submit')){
-            $details = array(
-                'first_name' => $this->input->post('firstname'),
-                'last_name' => $this->input->post('lastname'),
-                'date_of_birth' => $this->input->post('dateofbirth'),
-                'gender' => $this->input->post('gender'),
-                'emailid' => $this->input->post('emailid'),
-                'contact_number' => $this->input->post('contactnumber'),
-                'date_of_joining' => $this->input->post('joiningdate'),
-                'designation' => $this->input->post('destination'),
-                'current_address' => $this->input->post('currentaddress'),
-                'experience' => $this->input->post('experience'),
-                'permament_address' => $this->input->post('permanentaddress'),
-                'blood_group' => $this->input->post('bloodgroup'),
-                'qualification' => $this->input->post('qualification'),
-                'emergency_number' => $this->input->post('emergencynumber'),
-                'picture' => $this->input->post('profilephoto'),
-                'companyid' => $this->input->post('companyid')
-            );
-            $this->EmployeeModel->updateEMployee($details,$id);
-            echo "Employee details sucessfully updated";
+            $employee['first_name'] = $this->input->post('firstname');
+            $employee['last_name' ]= $this->input->post('lastname');
+            $employee['date_of_birth' ]= $this->input->post('dateofbirth');
+            $employee['gender' ]= $this->input->post('gender');
+            $employee['emailid' ]= $this->input->post('emailid');
+            $employee['contact_number'] = $this->input->post('contactnumber');
+            $employee['date_of_joining'] = $this->input->post('joiningdate');
+            $employee['designation'] = $this->input->post('destination');
+            $employee['current_address'] = $this->input->post('currentaddress');
+            $employee['experience' ]= $this->input->post('experience');
+            $employee['permament_address'] = $this->input->post('permanentaddress');
+            $employee['blood_group' ]= $this->input->post('bloodgroup');
+            $employee['qualification'] = $this->input->post('qualification');
+            $employee['emergency_number'] = $this->input->post('emergencynumber');
+            $employee['picture' ]= $this->input->post('profilephoto');
+            $technology = $this->input->post('technology');
+            $employee['companyid'] = $this->input->post('companyid');
+            $data = $this->EmployeeModel->updateEmployee($employee,$id);
+            $result = $this->EmployeeModel->addTechnology($technology, $id);
         }
     }
 
@@ -178,13 +188,11 @@ class EmployeeController extends CI_Controller{
         $id = $_GET['delete'];
         $details = $this->EmployeeModel->deleteEmployee($id);
         if($details){
-            echo '<script type = "text/javascript">';
-            echo 'alert("Employee details deleted successfully")';
-            echo '</script>';
+            echo "<script type = 'text/javascript'>alert('Employee details deleted successfully');location = 'index';</script>";
+            echo "$id";
         } else {
             $this->load->view('failed');
         }
-
     }
 
     public function employeebytechnology(){

@@ -1,8 +1,5 @@
 <?php
 class EmployeeModel extends CI_Model{
-
-    // protected  $table = 'employee';
-
     function __construct(){
       parent::__construct();
       $this->load->database();
@@ -23,7 +20,7 @@ class EmployeeModel extends CI_Model{
     }
 
     public function addTechnology($technology, $id){
-      for($index = 0; $index < sizeof($technology); $index++){
+      for($index = 0; $index < sizeof($technology); $index++) {
         $employeeTechnology = $technology[$index];
         $data = array('employee_id'=>$id, 'technology_id'=>$employeeTechnology);
         $result = $this->db->insert('employee_technology', $data); 
@@ -32,7 +29,6 @@ class EmployeeModel extends CI_Model{
     }
 
     public function getAllEmployee($order, $limit, $start){
-
         if ($order=='first_name'){
           $this->db->limit($limit, $start);
           $this->db->from('employee');
@@ -48,7 +44,6 @@ class EmployeeModel extends CI_Model{
         }
 
         if($order == ""){
-          echo "asdfghjk";
           $this->db->from('employee');
           $this->db->where('isdelete', TRUE);
           $this->db->limit($limit, $start);
@@ -60,6 +55,7 @@ class EmployeeModel extends CI_Model{
     public function getAllEmployeeDetails($id){
       $this->db->select('*');
       $this->db->from('employee');
+      $this->db->join('company', 'employee.companyid = company.cmp_id');
        $this->db->where('id', $id);
        $query = $this->db->get();
       return $query->result();
@@ -71,7 +67,6 @@ class EmployeeModel extends CI_Model{
         $this->db->like('first_name', $data);
         $this->db->or_like('last_name', $data);
         $this->db->or_like('emailid', $data);
-        // $this->db->where('first_name', $data);
         $query = $this->db->where('isdelete', TRUE)->get();
         return $query->result();
     }
@@ -80,22 +75,18 @@ class EmployeeModel extends CI_Model{
       $this->db->select('*');
       $this->db->from('employee');
       $query = $this->db->where('id', $id)->get();
-        return $query->result();
+      return $query->result();
     }
 
-    public function updateEmployee($details,$id){
+    public function updateEmployee($employee, $id){
         $query = $this->db->where('id', $id);
-        $this->db->update('employee', $details);
+        $this->db->update('employee', $employee);
         return $query;
     }
 
     public function deleteEmployee($id){
         $query = $this->db->query("update employee SET isdelete = false where id='".$id."'");
-        if($query == true){
-            echo "Employee id = ".$id."  successfully deleted";
-        } else {
-            echo "Failed to delete";
-        }
+        return $query;
     }
 
     public function employeebyTechnology($id){
@@ -103,7 +94,7 @@ class EmployeeModel extends CI_Model{
       $this->db->from('employee');
       $this->db->join('employee_technology','employee_technology.employee_id = employee.id');
       $this->db->where("technology_id", $id);
-      $query = $this->db->get();
+      $query = $this->db->where('isdelete', TRUE)->get();
       return $query->result();
     }
 }

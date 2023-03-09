@@ -1,0 +1,90 @@
+fieldset{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+}
+.language{
+    background-color: rgb(164, 162, 165);
+}
+button{
+    font-size: 15px;
+    border-radius: 8px;
+    border-style: none;
+}
+text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.php{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.java{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.phython{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.html{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.css{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.javascript{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.angular{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.react{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+.go{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.row-4 .cold{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.row-4 .old-c{
+    padding-bottom: 1%;
+    display: inline-block;
+    margin-left: 5%;
+}
+.back{
+    width: 100%;
+}
+.link{
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 1%;
+}
+.top-container{
+    margin-left: 1%;
+    display: inline-block;
+    width: 90%;
+    font-size: 10px;
+}

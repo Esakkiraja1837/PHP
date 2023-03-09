@@ -1,36 +1,35 @@
-.container
-{
-    /* background-color: chocolate; */
+h1{
+    width: 100%;
+    margin-left: 50%;
 }
-.top-container
-{
-    background-color: bisque;
+.back{
+    width: 60%;
 }
-.profile .image
-{
-    width: 200px;
-    border-radius: 100px;
+.link{
+    display: inline-block;
+    color: black;
+    font-size: 29px;
 }
-.profile
-{
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    margin-left: 5%;
+.title{
+    margin-left: 18%;
+    display: inline-block;
+    width: 40%;
+}
+.main-conatiner{
     display: inline-block;
 }
-.profile .images{
+.details
+{
+    margin-left: 4%;
     display: inline-block;
 }
-.profile .details{
-    display: inline-block;
-}
-.profile .name{
+.name{
     font-weight: bold;
     font-size: 30px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block;
 }
-.profile .desination{
+.desination{
     margin-top: 2px;
     font-size: 18px;
 }
@@ -40,21 +39,22 @@
     color: rgb(11, 11, 11);
     font-size: 12px;
 }
-.profile .email{
+.email{
     margin-top: 2px;
     font-size: 15px;
 }
-.profile .email .mail-icon{
+.email .mail-icon{
     margin-right: 10px;
     display: inline-block;
     color: rgb(11, 11, 11);
     font-size: 12px;
 }
-.profile .mobile{
+.mobile{
     margin-top: 4px;
     font-size: 15px;
+    display: inline-block;
 }
-.profile .mobile .mobile-icon{
+.mobile .mobile-icon{
     margin-right: 10px;
     display: inline-block;
     color: rgb(11, 11, 11);
@@ -70,18 +70,27 @@
     color: rgb(11, 11, 11);
     font-size: 12px;
 }
-.about{
-    margin-left: 5%;
+.profile .image
+{
+    width: 200px;
+    border-radius: 100px;
+    
 }
-.qulaification{
-    margin-top: 1%;
+.profile
+{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    margin-left: 55%;
     display: inline-block;
-    font-size:18px;
 }
-.quali-val{
+.bottom-container{
+    margin-left: 4%;
     display: inline-block;
-    font-weight: bold;
-    margin-left: 37px;
+    margin-top: 2%;
+}
+.details{
+    display: inline-block;
 }
 .experience{
     margin-top: 1%;
@@ -93,23 +102,6 @@
     font-weight: bold;
     margin-left: 50px;
 }
-.personal-data{
-    margin-left: 5%;
-    display: inline-block;
-    margin-bottom: 2%;
-    padding-top: 5%;
-}
-.date-of-birth{
-    margin-top: 1%;
-    display: inline-block;
-    font-size: 18px;
-    
-}
-.datebirth{
-    margin-left: 30px;
-    display: inline-block;
-    font-weight: bold;
-}
 .date-of-joining{
     margin-top: 1%;
     font-size: 18px;
@@ -117,17 +109,6 @@
 }
 .datejoining{
     margin-left: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
-.blood{
-    margin-top: 1%;
-    font-size: 18px;
-    display: inline-block;
-}
-.blood-val
-{
-    margin-left: 35px;
     display: inline-block;
     font-weight: bold;
 }
@@ -139,17 +120,6 @@
 .address-val
 {
     margin-left: 69px;
-    display: inline-block;
-    font-weight: bold;
-}
-.emergency{
-    margin-top: 1%;
-    font-size: 18px;
-    display: inline-block;
-}
-.emergency-val
-{
-    margin-left: 23px;
     display: inline-block;
     font-weight: bold;
 }
@@ -166,10 +136,11 @@
     margin-bottom: 1%;
 }
 .company-details{
+    margin-left:60%;
     display: inline-block;
-    margin-left: 50%;
 }
 .company-details .company-name{
+    margin-top: 5px;
     font-size: 14px;
     display: inline-block;
 }
@@ -220,8 +191,7 @@
 }
 .social-media
 {
-    margin-top: 10%;
-    
+    margin-top: 1%;
 }
 .facebook
 {
@@ -241,4 +211,4 @@
 .buttom-container{
     width: 100%;
     display: inline-block;
-}
+} 
